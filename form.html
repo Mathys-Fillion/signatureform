@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/pico.min.css">
+        <link rel="stylesheet" href="css/signature-pad.css">
+        <title>Form to send email</title>
+    </head>
+    <body>
+        <main class="container">
+            <form action="send_mail.php" method="post">
+            <div class="grid">
+                <label for="firstname">
+                First name
+                <input type="text" id="firstname" name="firstname" placeholder="First name" required>
+                </label>
+                <label for="lastname">
+                Last name
+                <input type="text" id="lastname" name="lastname" placeholder="Last name" required>
+                </label>
+            </div>
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="Email address" required>
+                <small>We'll never share your email with anyone else.</small>
+            <div id="signature-pad" class="signature-pad">
+                <div class="signature-pad--body">
+                  <canvas></canvas>
+                </div>
+                <div class="signature-pad--footer">
+                    <div class="description">Sign above</div>
+                    <div class="signature-pad--actions">
+                        <div class="grid">
+                          <button type="button" class="button clear" data-action="clear">Clear</button>
+                          <button type="button" class="button" data-action="undo">Undo</button>
+                          <button type="button" class="button save" data-action="save-png">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <input type="hidden" id="attachment" name="attachment">
+                <input type="submit" name="submit" value="Submit">
+            </form>
+        </main>
+        <script src="js/signature_pad.umd.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
